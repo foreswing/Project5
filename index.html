@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">        
+    <title>Summit High Country</title>
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <base href="http://maps.gstatic.com/mapfiles/openhand_8_8.cur" target="_parent" >
+</head>
+
+<body>
+
+    <header> 
+        <form action="#"> 
+            <input placeholder="Search…" type="search" name="q" data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off"> 
+        </form> 
+    </header>
+
+    <div style="width: 100%">
+        <div id="map" style= "position: absolute; float: left; width: 70%; height: 100%"></div>
+        <div id="points-list-div" style= "float: right; width: 30%; height: 100%">
+            <ul style="list-style-type: none; padding:15px; margin:0px" data-bind= "template: { name: 'pointsTmpl', foreach: points }"></ul>
+        </div>
+    </div>
+        <script id="pointsTmpl" type="text/html">
+            <li>
+                <span data-bind="text: name"></span>
+            </li>
+        </script>
+        <script type='text/javascript' src='file:///C:/Users/Ken/Desktop/Portfolio/Project5/js/jquery-2.1.3.min.js'></script>
+        <script type='text/javascript' src='file:///C:/Users/Ken/Desktop/Portfolio/Project5/js/knockout-3.3.0.js'></script>
+        <script type='text/javascript' src='file:///C:/Users/Ken/Desktop/Portfolio/Project5/js/ViewModel.js'></script>
+
+</body>
+
+</html>
