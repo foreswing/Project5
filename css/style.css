@@ -1,2 +1,11 @@
 li {background: white}
 li:nth-child(odd) {background:  #D1D1E0}
+
+ul li {
+	cursor: pointer;
+}
+
+.selected, ul li:hover {
+	color: #000;
+	background-color: #FFFF00;
+}

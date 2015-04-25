@@ -1,111 +1,279 @@
-// Overall viewmodel for this application, along with initial state
+// Set up the  data Model
 
-function place(type, name, url, lat, long) {
-    this.type = ko.observable(type);
-    this.name = ko.observable(name);
-    this.url = ko.observable(url);
-    this.lat = ko.observable(lat);
-    this.long = ko.observable(long);
+var Model = {
+  points: [
+    {
+    type: 'ski',
+    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/sport22.svg', 
+    name: 'Keystone Ski Resort',
+    url:  'http://www.keystoneresort.com/',
+    lat: 39.607441,
+    long: -105.943594,
+    yelpID: 'keystone-resort-keystone-2',
+    snoCountryID: '303014',
+    highlight: ko.observable(false)
+    },
+    {
+    type: 'ski',
+    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/sport22.svg', 
+    name: 'Loveland Ski Area',
+    url:  'http://www.skiloveland.com/',
+    lat: 39.680273,
+    long: -105.895918,
+    yelpID: 'loveland-ski-area-georgetown-2',
+    snoCountryID: '303015',
+    highlight: ko.observable(false)
+    },
+    {
+    type: 'ski',
+    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/sport22.svg', 
+    name: 'Breckenridge Ski Resort',
+    url:  'http://www.breckenridge.com/',
+    lat: 39.480506,
+    long: -106.06688,
+    yelpID: 'breckenridge-ski-resort-breckenridge',
+    snoCountryID: '303007',
+    highlight: ko.observable(false)
+    },
+    {
+    type: 'ski',
+    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/sport22.svg', 
+    name: 'Copper Mountain',
+    url:  'http://www.coppercolorado.com/winter/index.html',
+    lat: 39.500037,
+    long: -106.146817,
+    yelpID: 'copper-mountain-ski-resort-copper-mountain',
+    snoCountryID: '303009',
+    highlight: ko.observable(false)
+    },
+    {
+    type: 'ski',
+    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/sport22.svg', 
+    name: 'Arapahoe Basin Ski Area',
+    url:  'http://www.arapahoebasin.com/Abasin/Default.aspx',
+    lat: 39.6328784,
+    long: -105.9413623,
+    yelpID: 'arapahoe-basin-ski-area-dillon',
+    snoCountryID: '303001',
+    highlight: ko.observable(false)
+    },
+    {
+    type: 'bar',
+    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/drink87.svg', 
+    name: 'Lake Dillon Tavern',
+    url:  'http://www.lakedillontavern.com/',
+    lat: 39.627513,
+    long: -106.045675,
+    yelpID: 'lake-dillon-tavern-dillon',
+    snoCountryID: '303015',
+    highlight: ko.observable(false)
+    },
+    {
+    type: 'bar',
+    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/drink87.svg', 
+    name: 'Snake River Saloon',
+    url:  'http://www.snakeriversaloon.com/',
+    lat: 39.608487,
+    long: -105.950939,
+    yelpID: 'snake-river-saloon-keystone',
+    snoCountryID: '303001',
+    highlight: ko.observable(false)
+    },
+    {
+    type: 'bar',
+    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/drink87.svg', 
+    name: 'Dillon Dam Brewery',
+    url:  'http://www.dambrewery.com/',
+    lat: 39.627563,
+    long: -106.06032,
+    yelpID: 'dillon-dam-brewery-dillon',
+    snoCountryID: '303014',
+    highlight: ko.observable(false)
+    },
+    {
+    type: 'bar',
+    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/drink87.svg', 
+    name: 'Ollies Pub & Grub',
+    url:  'http://www.olliespub.com/',
+    lat: 39.575529,
+    long: -106.0997,
+    yelpID: 'ollies-pub-and-grub-frisco',
+    snoCountryID: '303009',
+    highlight: ko.observable(false)
+    },
+    {
+    type: 'bar',
+    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/drink87.svg', 
+    name: 'Breckenridge Brewery & Pub',
+    url:  'http://www.breckbrew.com/agegate',
+    lat: 39.4806555,
+    long: -106.0451615,
+    yelpID: 'breckenridge-brewery-breckenridge',
+    snoCountryID: '303007',
+    highlight: ko.observable(false)
+    },
+    {
+    type: 'dispensary',
+    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/drug5.svg', 
+    name: 'Alpenglow Botanicals',
+    url:  'http://alpenglowbotanicals.com/',
+    lat: 39.508006,
+    long: -106.052112,
+    yelpID: 'alpenglow-botanicals-breckenridge',
+    snoCountryID: '303009',
+    highlight: ko.observable(false)
+    },
+    {
+    type: 'dispensary',
+    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/drug5.svg', 
+    name: 'Breckenridge Cannabis Club',
+    url:  'http://medicalmarijuanabreckenridge.com/',
+    lat: 39.501242,
+    long: -106.043211,
+    yelpID: 'breckenridge-cannabis-club-breckenridge',
+    snoCountryID: '303007',
+    highlight: ko.observable(false)
+    },
+    {
+    type: 'dispensary',
+    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/drug5.svg', 
+    name: 'High Country Healing',
+    url:  'http://www.highcountryhealing.com/new/',
+    lat: 39.628771,
+    long: -106.070723,
+    yelpID: 'high-country-healing-silverthorne',
+    snoCountryID: '303001',
+    highlight: ko.observable(false)
+    },
+    {
+    type: 'dispensary',
+    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/drug5.svg', 
+    name: 'Native Roots',
+    url:  'http://nativeroots303.com/',
+    lat: 39.587397,
+    long: -106.094236,
+    yelpID: 'native-roots-frisco-frisco',
+    snoCountryID: '303014',
+    highlight: ko.observable(false)
+    },
+    {
+    type: 'dispensary',
+    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/drug5.svg', 
+    name: 'Alpenglow Premium Cannabis',
+    url:  'http://alpenglowbotanicals.com/',
+    lat: 39.62685,
+    long: -106.061994,
+    yelpID: 'alpenglow-premium-cannabis-dillonflat',
+    snoCountryID: '303015',
+    highlight: ko.observable(false)
+    }
+  ],
+  currentPoint: ko.observable(null)
+};
 
-    var iconBase
-    var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(lat, long),
-        title: name,
-        url: url,
-        icon: iconSelect(type),
-        map: googleMap,
+// ViewModel Code
 
-// Set up information window content to use when marker is clicked
+var ViewModel = function () {
 
-        infowindow: new google.maps.InfoWindow({
-            content: "<span class='name'>" + name +
-                     "</span><br><a href=" + url + ">" + url + "</a><br>"
-        })
-    });
+// Initialize Knockout Observable Variables
 
+  var self = this;
 
+  self.markerArray = ko.observableArray();
+  self.query = ko.observable("");
+  self.showMarkers = ko.observable(true);
+  var map;
 
-// Event handler to show information window when marker is clicked
+// Initialize DOM using IIFE
 
-    google.maps.event.addListener(marker, 'click', function() {
-        marker.infowindow.open(googleMap, marker);
-    });
+  var initDom = function() {
 
-}
+// Verify Map Object in DOM and initialize map or display map error
 
-function iconSelect(markerType) {
-    if (markerType == 'ski') {
-        markerUrl = 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/sport22.svg';
-    } else if (markerType == 'bar') {
-            markerUrl = 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/drink87.svg';
-        } else {
-            markerUrl = 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/drug5.svg';
-        }
-    return markerUrl;
-}
+    if (typeof window.google === 'object' && typeof window.google.maps === 'object') {
 
-// Define initial map variable and instantiate it zoomed and centered
+// Set initial map options
 
-var googleMap = new google.maps.Map(document.getElementById('map'), {
-    zoom: 10,
-    center: new google.maps.LatLng(39.599434,-106.005254),
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-});
+      var mapOptions = {
+        // disableDefualtUI: true,
+        zoom: 10,
+        center: new google.maps.LatLng(39.599434,-106.005254),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+
+// Set and display map
+
+      map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        infowindow = new google.maps.InfoWindow({
+          content: null
+      });
+
+// Create points of interest array using data Model & display on map
+
+      var pointsArray = Model.points;
+
+      for (var x=0; x < pointsArray.length; x++) {
+        var pointPosition = new google.maps.LatLng(
+          pointsArray[x].lat,
+          pointsArray[x].long
+        );
+
+        var marker = new google.maps.Marker({
+          position: pointPosition,
+          title: pointsArray[x].name,
+          url: pointsArray[x].url,
+          icon: pointsArray[x].iconUrl,
+          map: map,
+          highlight: pointsArray[x].highlight,
+          snow: pointsArray[x].snoCountryID,
+        });
+
+// Event handler to set Content and show information window when marker is clicked
+
+        google.maps.event.addListener(marker, 'click', function() {
+          var that = this;
+          infowindow.setContent("<span class='name'>" + that.title +
+                  "</span><br><a href=" + that.url + ">" + that.url + "</a><br>" +
+                  "</span><br><a onClick=" + "snowReport(that.snow); return false;" + 
+                  ">Click Here for Nearby Snow Report</a><br>");
+
+          infowindow.open(map, that);
+        });
+
+// Add marker to marker array
+
+        self.markerArray.push(marker);
+
+      }; // end for
 
 // Event handler to keep map centered when screen is resized
 
-google.maps.event.addDomListener(window, 'resize', function() {
-  googleMap.setCenter(new google.maps.LatLng(39.599434,-106.005254));
-});
+      google.maps.event.addDomListener(window, 'resize', function() {
+        map.setCenter(new google.maps.LatLng(39.599434,-106.005254));
+      });
+    }; // end if
+  }(); // end initDom and immediately execute
 
-// Set up the viewModel and instantiate all points of interest
+    self.listArray = ko.computed(function(){
+        var query = self.query().toLowerCase();
+        console.log(query);
+        if (!query) {
+            return self.listArray = Model.points;
+        } else {
+            console.log("I'm in the else branch of the filter query");
+            return ko.utils.arrayFilter(self.markerArray(), function(marker) {
 
-var viewModel = {
-    query: ko.observable(''),
-    points: ko.observableArray([
-        new place('ski', 'Keystone Ski Resort', 
-                  'http://www.keystoneresort.com/', 39.607441,-105.943594),
-        new place('ski', 'Loveland Ski Area', 
-                  'http://www.skiloveland.com/', 39.680273,-105.895918),
-        new place('ski', 'Breckenridge Ski Resort',
-                  'http://www.breckenridge.com/', 39.480506,-106.06688),
-        new place('ski', 'Copper Mountain', 
-                  'http://www.coppercolorado.com/winter/index.html', 39.500037,-106.146817),
-        new place('ski', 'Arapahoe Basin Ski Area',
-                  'http://www.arapahoebasin.com/Abasin/Default.aspx', 39.6328784,-105.9413623),
-        new place('bar', 'Lake Dillon Tavern', 
-                  'http://www.lakedillontavern.com/', 39.627513,-106.045675),
-        new place('bar', 'Snake River Saloon', 
-                  'http://www.snakeriversaloon.com/', 39.608487,-105.950939),
-        new place('bar', 'Dillon Dam Brewery', 
-                  'http://www.dambrewery.com/', 39.627563,-106.06032),
-        new place('bar', 'Ollies Pub & Grub', 
-                  'http://www.olliespub.com/', 39.575529,-106.0997),
-        new place('bar', 'Breckenridge Brewery & Pub', 
-                  'http://www.breckbrew.com/agegate', 39.4806555,-106.0451615),
-        new place('dispensary', 'Alpenglow Botanicals', 
-                  'http://alpenglowbotanicals.com/', 39.508006,-106.052112),
-        new place('dispensary', 'Breckenridge Cannabis Club', 
-                  'http://medicalmarijuanabreckenridge.com/', 39.501242,-106.043211),
-        new place('dispensary', 'High Country Healing', 
-                  'http://www.highcountryhealing.com/new/', 39.628771,-106.070723),
-        new place('dispensary', 'Native Roots', 
-                  'http://nativeroots303.com/', 39.587397,-106.094236),
-        new place('dispensary', 'Alpenglow Premium Cannabis', 
-                  'http://alpenglowbotanicals.com/', 39.62685,-106.061994)])
-};
+                if (marker.title.toLowerCase().indexOf(query) > -1) {
+                    console.log("I'm in the true branch indexOf check");
+                    console.log(marker.title);
+                    return marker.title.indexOf(query);
+                }
+                // return marker.title.indexOf(query) > -1;
+            });
+        }
+    }, self);
+}
 
-// Setup search and filtering functionality
+// Apply all ViewModel knockout bindings
 
-viewModel.filteredPoints = ko.computed(function() {
-    var self = this;
-    var query = self.query().toLowerCase();
-    return ko.utils.arrayFilter(self.points, function(points) {
-        return ko.utils.stringStartsWith(self.place.name().toLowerCase(), query);
-    });
-
-}, viewModel);
-
-// Apply all knockout bindings to the viewModel
-
-ko.applyBindings(viewModel);
+ko.applyBindings(ViewModel);
