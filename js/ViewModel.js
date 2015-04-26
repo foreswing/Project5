@@ -4,7 +4,7 @@ var Model = {
   points: [
     {
     type: 'ski',
-    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/sport22.svg', 
+    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/ski.svg', 
     name: 'Keystone Ski Resort',
     url:  'http://www.keystoneresort.com/',
     lat: 39.607441,
@@ -15,7 +15,7 @@ var Model = {
     },
     {
     type: 'ski',
-    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/sport22.svg', 
+    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/ski.svg', 
     name: 'Loveland Ski Area',
     url:  'http://www.skiloveland.com/',
     lat: 39.680273,
@@ -26,7 +26,7 @@ var Model = {
     },
     {
     type: 'ski',
-    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/sport22.svg', 
+    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/ski.svg', 
     name: 'Breckenridge Ski Resort',
     url:  'http://www.breckenridge.com/',
     lat: 39.480506,
@@ -37,7 +37,7 @@ var Model = {
     },
     {
     type: 'ski',
-    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/sport22.svg', 
+    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/ski.svg', 
     name: 'Copper Mountain',
     url:  'http://www.coppercolorado.com/winter/index.html',
     lat: 39.500037,
@@ -48,7 +48,7 @@ var Model = {
     },
     {
     type: 'ski',
-    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/sport22.svg', 
+    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/ski.svg', 
     name: 'Arapahoe Basin Ski Area',
     url:  'http://www.arapahoebasin.com/Abasin/Default.aspx',
     lat: 39.6328784,
@@ -59,7 +59,7 @@ var Model = {
     },
     {
     type: 'bar',
-    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/drink87.svg', 
+    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/bar.svg', 
     name: 'Lake Dillon Tavern',
     url:  'http://www.lakedillontavern.com/',
     lat: 39.627513,
@@ -70,7 +70,7 @@ var Model = {
     },
     {
     type: 'bar',
-    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/drink87.svg', 
+    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/bar.svg', 
     name: 'Snake River Saloon',
     url:  'http://www.snakeriversaloon.com/',
     lat: 39.608487,
@@ -81,7 +81,7 @@ var Model = {
     },
     {
     type: 'bar',
-    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/drink87.svg', 
+    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/bar.svg', 
     name: 'Dillon Dam Brewery',
     url:  'http://www.dambrewery.com/',
     lat: 39.627563,
@@ -92,7 +92,7 @@ var Model = {
     },
     {
     type: 'bar',
-    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/drink87.svg', 
+    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/bar.svg', 
     name: 'Ollies Pub & Grub',
     url:  'http://www.olliespub.com/',
     lat: 39.575529,
@@ -103,7 +103,7 @@ var Model = {
     },
     {
     type: 'bar',
-    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/drink87.svg', 
+    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/bar.svg', 
     name: 'Breckenridge Brewery & Pub',
     url:  'http://www.breckbrew.com/agegate',
     lat: 39.4806555,
@@ -114,9 +114,9 @@ var Model = {
     },
     {
     type: 'dispensary',
-    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/drug5.svg', 
+    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/dispensary.svg', 
     name: 'Alpenglow Botanicals',
-    url:  'http://alpenglowbotanicals.com/',
+    url:  'http://alpenglowbotanicals.webs.com/',
     lat: 39.508006,
     long: -106.052112,
     yelpID: 'alpenglow-botanicals-breckenridge',
@@ -125,7 +125,7 @@ var Model = {
     },
     {
     type: 'dispensary',
-    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/drug5.svg', 
+    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/dispensary.svg', 
     name: 'Breckenridge Cannabis Club',
     url:  'http://medicalmarijuanabreckenridge.com/',
     lat: 39.501242,
@@ -136,7 +136,7 @@ var Model = {
     },
     {
     type: 'dispensary',
-    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/drug5.svg', 
+    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/dispensary.svg', 
     name: 'High Country Healing',
     url:  'http://www.highcountryhealing.com/new/',
     lat: 39.628771,
@@ -147,7 +147,7 @@ var Model = {
     },
     {
     type: 'dispensary',
-    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/drug5.svg', 
+    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/dispensary.svg', 
     name: 'Native Roots',
     url:  'http://nativeroots303.com/',
     lat: 39.587397,
@@ -158,9 +158,9 @@ var Model = {
     },
     {
     type: 'dispensary',
-    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/drug5.svg', 
+    iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/dispensary.svg', 
     name: 'Alpenglow Premium Cannabis',
-    url:  'http://alpenglowbotanicals.com/',
+    url:  'http://alpenglowbotanicals.webs.com/',
     lat: 39.62685,
     long: -106.061994,
     yelpID: 'alpenglow-premium-cannabis-dillonflat',
@@ -228,21 +228,22 @@ var ViewModel = function () {
           snow: pointsArray[x].snoCountryID,
         });
 
+// Add marker to marker array
+
+        self.markerArray.push(marker);
+
 // Event handler to set Content and show information window when marker is clicked
 
         google.maps.event.addListener(marker, 'click', function() {
           var that = this;
           infowindow.setContent("<span class='name'>" + that.title +
                   "</span><br><a href=" + that.url + ">" + that.url + "</a><br>" +
-                  "</span><br><a onClick=" + "snowReport(that.snow); return false;" + 
-                  ">Click Here for Nearby Snow Report</a><br>");
+                  "</span><br><button type='button' onclick=" +
+                  "'snowReport(" + that.snow + ")'" + 
+                  ">Get Nearby Snow Report</button><br>");
 
           infowindow.open(map, that);
         });
-
-// Add marker to marker array
-
-        self.markerArray.push(marker);
 
       }; // end for
 
@@ -251,27 +252,85 @@ var ViewModel = function () {
       google.maps.event.addDomListener(window, 'resize', function() {
         map.setCenter(new google.maps.LatLng(39.599434,-106.005254));
       });
+
     }; // end if
+
   }(); // end initDom and immediately execute
+
+// Search/Filter function applied to list of points on map
 
     self.listArray = ko.computed(function(){
         var query = self.query().toLowerCase();
-        console.log(query);
-        if (!query) {
-            return self.listArray = Model.points;
-        } else {
-            console.log("I'm in the else branch of the filter query");
-            return ko.utils.arrayFilter(self.markerArray(), function(marker) {
-
-                if (marker.title.toLowerCase().indexOf(query) > -1) {
-                    console.log("I'm in the true branch indexOf check");
-                    console.log(marker.title);
-                    return marker.title.indexOf(query);
-                }
-                // return marker.title.indexOf(query) > -1;
-            });
-        }
+        return ko.utils.arrayFilter(self.markerArray(), function(marker) {
+            return marker.title.toLowerCase().indexOf(query) > -1;
+        });
     }, self);
+
+// Subscribe map marker array to list array to keep them in synch
+
+    self.listArray.subscribe(function() {
+        var differences = ko.utils.compareArrays(self.markerArray(), self.listArray());
+        ko.utils.arrayForEach(differences, function(marker) {
+          if (marker.status == 'deleted') {
+            marker.value.setMap(null);
+          } else {
+            marker.value.setMap(map);
+          }
+        });
+    });
+
+//Highlight map marker if list item is clicked.
+
+    self.selectItem = function(listItem) {
+        google.maps.event.trigger(listItem, 'click');
+    };
+
+
+ // Function to display snow report when called from map marker infowindow
+
+    self.snowReport = function(resortID) {
+    console.log("I'm in the snow report function - Resort ID = " + resortID);
+    document.getElementById("test").innerHTML = "Getting Snow Report" +
+        " for resortID = " + resortID;
+    };
+
+ // Function to filter list based on button clicked
+
+    self.filterActivity = function(activity) {
+        console.log("I'm in the Filter Function - Activity Passed = " + activity);
+        // // var array.length = 0;
+        // var tempArray = Model.points;
+        // for (var x=0; x < tempArray.length; x++) {
+        //     console.log("Name = ", tempArray[x].name, " --- Location Type = ", tempArray[x].type);
+        // };
+        // for (var x=0; x < tempArray.length; x++) {
+        //     console.log("Name = ", tempArray[x].name, " --- Location Type = ", tempArray[x].type);
+        //     if (tempArray.type !== activity) {
+        //         console.log("unequal types")
+        //         console.log("Name = ", tempArray[x].name, " --- Location Type = ", tempArray[x].type);
+        //         tempArray.pop()[x];
+        //     }
+
+        // };
+
+        // console.log("Items Remaining In Array - Should Just Be = Activity Value Passed = " + activity);
+
+        // for (var x=0; x < tempArray.length; x++) {
+        //     console.log("Name = ", tempArray[x].name, " --- Location Type = ", tempArray[x].type);
+        // }
+
+        // listArray = ko.observableArray(tempArray);
+        // // self.array = Model.points;
+        // // self.listArray = ko.computed(function() {
+        // //     return ko.utils.arrayFilter(self.array(), function(select) {
+        // //         if (self.array.type == activity) {
+        // //             console.log(self.array.type);
+        // //             return self.array().name;
+        // //         } 
+        // //     });
+        // // }, self);
+    }
+
 }
 
 // Apply all ViewModel knockout bindings
