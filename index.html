@@ -31,13 +31,20 @@
         </div>
     </header>
 
-    <div style="width: 100%">
+    <div style="width: 100%; min-height: 100%; position: absolute">
         <div id="map" style= "position: absolute; float: left; width: 70%; height: 100%"></div>
         <div style= "float: right; width: 30%; height: 100%">
             <ul style="list-style-type: none; padding-left:15px; margin:0px" data-bind= "foreach: listArray">
                 <li data-bind="text: title, click: selectItem, css: {'selected': highlight()}">
                 </li>
             </ul>
+        </div>
+<!--         <dialog>
+            <p>This is da dialog!</p>
+            <button id="Close">Close</button>
+        </dialog>
+ -->
+        <div id="dialog" style="position: absolute; width: 50%; height: 50%; z-index: 10; background-color: red; margin: 0 auto; visibility: hidden" data-bind="text: dialogItem">
         </div>
         <div id="snow report">
             <p id="test"></p>
