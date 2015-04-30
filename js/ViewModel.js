@@ -4,7 +4,7 @@ var Model = {
     points: [
         {
         type: 'ski',
-        iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/ski.svg', 
+        iconUrl: 'icons/ski.svg', 
         name: 'Keystone Ski Resort',
         url:  'http://www.keystoneresort.com/',
         lat: 39.607441,
@@ -15,7 +15,7 @@ var Model = {
         },
         {
         type: 'ski',
-        iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/ski.svg', 
+        iconUrl: 'icons/ski.svg', 
         name: 'Loveland Ski Area',
         url:  'http://www.skiloveland.com/',
         lat: 39.680273,
@@ -26,7 +26,7 @@ var Model = {
         },
         {
         type: 'ski',
-        iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/ski.svg', 
+        iconUrl: 'icons/ski.svg', 
         name: 'Breckenridge Ski Resort',
         url:  'http://www.breckenridge.com/',
         lat: 39.480506,
@@ -37,7 +37,7 @@ var Model = {
         },
         {
         type: 'ski',
-        iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/ski.svg', 
+        iconUrl: 'icons/ski.svg', 
         name: 'Copper Mountain',
         url:  'http://www.coppercolorado.com/winter/index.html',
         lat: 39.500037,
@@ -48,7 +48,7 @@ var Model = {
         },
         {
         type: 'ski',
-        iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/ski.svg', 
+        iconUrl: 'icons/ski.svg', 
         name: 'Arapahoe Basin Ski Area',
         url:  'http://www.arapahoebasin.com/Abasin/Default.aspx',
         lat: 39.6328784,
@@ -59,7 +59,7 @@ var Model = {
         },
         {
         type: 'bar',
-        iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/bar.svg', 
+        iconUrl: 'icons/bar.svg', 
         name: 'Lake Dillon Tavern',
         url:  'http://www.lakedillontavern.com/',
         lat: 39.627513,
@@ -70,7 +70,7 @@ var Model = {
         },
         {
         type: 'bar',
-        iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/bar.svg', 
+        iconUrl: 'icons/bar.svg', 
         name: 'Snake River Saloon',
         url:  'http://www.snakeriversaloon.com/',
         lat: 39.608487,
@@ -81,7 +81,7 @@ var Model = {
         },
         {
         type: 'bar',
-        iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/bar.svg', 
+        iconUrl: 'icons/bar.svg', 
         name: 'Dillon Dam Brewery',
         url:  'http://www.dambrewery.com/',
         lat: 39.627563,
@@ -92,7 +92,7 @@ var Model = {
         },
         {
         type: 'bar',
-        iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/bar.svg', 
+        iconUrl: 'icons/bar.svg', 
         name: 'Ollies Pub & Grub',
         url:  'http://www.olliespub.com/',
         lat: 39.575529,
@@ -103,7 +103,7 @@ var Model = {
         },
         {
         type: 'bar',
-        iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/bar.svg', 
+        iconUrl: 'icons/bar.svg', 
         name: 'Breckenridge Brewery & Pub',
         url:  'http://www.breckbrew.com/agegate',
         lat: 39.4806555,
@@ -114,7 +114,7 @@ var Model = {
         },
         {
         type: 'dispensary',
-        iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/dispensary.svg', 
+        iconUrl: 'icons/dispensary.svg', 
         name: 'Alpenglow Botanicals',
         url:  'http://alpenglowbotanicals.webs.com/',
         lat: 39.508006,
@@ -125,7 +125,7 @@ var Model = {
         },
         {
         type: 'dispensary',
-        iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/dispensary.svg', 
+        iconUrl: 'icons/dispensary.svg', 
         name: 'Breckenridge Cannabis Club',
         url:  'http://medicalmarijuanabreckenridge.com/',
         lat: 39.501242,
@@ -136,7 +136,7 @@ var Model = {
         },
         {
         type: 'dispensary',
-        iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/dispensary.svg', 
+        iconUrl: 'icons/dispensary.svg', 
         name: 'High Country Healing',
         url:  'http://www.highcountryhealing.com/new/',
         lat: 39.628771,
@@ -147,7 +147,7 @@ var Model = {
         },
         {
         type: 'dispensary',
-        iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/dispensary.svg', 
+        iconUrl: 'icons/dispensary.svg', 
         name: 'Native Roots',
         url:  'http://nativeroots303.com/',
         lat: 39.587397,
@@ -158,7 +158,7 @@ var Model = {
         },
         {
         type: 'dispensary',
-        iconUrl: 'C:/Users/Ken/Desktop/Portfolio/Project5/icons/dispensary.svg', 
+        iconUrl: 'icons/dispensary.svg', 
         name: 'Alpenglow Premium Cannabis',
         url:  'http://alpenglowbotanicals.webs.com/',
         lat: 39.62685,
@@ -180,11 +180,13 @@ var ViewModel = function () {
     var self = this;
     self.dialogItem = ko.observable();
     self.markerArray = ko.observableArray();
-    self.skiArray = ko.observableArray();
+    self.listArray = ko.observableArray();
+    self.activityArray = ko.observableArray();
     self.query = ko.observable("");
     self.dialogVisible = ko.observable(false);
     self.showMarkers = ko.observable(true);
-    var map, place;
+    var map, place; 
+    self.skiArray = [];
     var activityButton = false;
 
 // Initialize DOM using IIFE
@@ -235,6 +237,7 @@ var ViewModel = function () {
 // Add marker to marker array
 
                 self.markerArray.push(marker);
+                self.listArray.push(marker);
 
 // Event handler to set Content and show information window when marker is clicked
 
@@ -249,6 +252,8 @@ var ViewModel = function () {
                     infowindow.open(map, that);
                 });
 
+                console.log("Ending For Loop");
+
             }; // end for
 
 // Event handler to keep map centered when screen is resized
@@ -261,16 +266,24 @@ var ViewModel = function () {
 
     }(); // end initDom and immediately execute
 
+    console.log("out of init DOM function")
+
 // Function to filter list based on button clicked
 
     self.filterActivity = function(activity) {
         activityButton = true;
         place = activity;
         console.log("I'm in the Filter Function - Activity Passed = " + activity);
+        self.listArray().removeAll();
+        // for (var x = 0; x < 5; x++) {
+        //     skiArray[x] = self.markerArray()[x].title;
+        //     skiArray.prop = "title";
+        // };
+        // self.listArray = ko.observableArray();
         for (var x = 0; x < 5; x++) {
-            skiArray()[x] = self.markerArray()[x];
-        };
-
+            console.log("pushing ", self.skiArray[x]);
+            self.listArray.push(self.markerArray()[x]);
+        };        
         // self.listArray.subscribe(function) {
         //     if (place = 'ski') {
         //         return ko.utils.arrayFilter(self.markerArray(), function(marker) {
@@ -281,6 +294,11 @@ var ViewModel = function () {
         //     };
         // });
     };
+
+    // if (activityButton) {
+        
+    //     self.activityArray = skiArray();
+    // };
 
 // Search/Filter function applied to list of points on map
 
@@ -309,6 +327,10 @@ var ViewModel = function () {
 
     self.listArray.subscribe(function() {
         console.log(activityButton);
+        for (var x = 0; x < self.listArray.length; x++) {
+            console.log(self.listArray()[x]);
+        }
+
         var differences = ko.utils.compareArrays(self.markerArray(), self.listArray());
         ko.utils.arrayForEach(differences, function(marker) {
           if (marker.status == 'deleted') {
