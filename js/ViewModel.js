@@ -175,18 +175,16 @@ var Model = {
 
 var ViewModel = function () {
 
-// Initialize Knockout Observable Variables
+// Initialize Standard and Knockout Observable Variables
 
     var self = this;
     self.dialogItem = ko.observable();
     self.markerArray = ko.observableArray();
     self.listArray = ko.observableArray();
-    self.activityArray = ko.observableArray();
     self.query = ko.observable("");
     self.dialogVisible = ko.observable(false);
     self.showMarkers = ko.observable(true);
     var map, place; 
-    self.skiArray = [];
     var activityButton = false;
 
 // Initialize DOM using IIFE
@@ -234,12 +232,12 @@ var ViewModel = function () {
                     snow: pointsArray[x].snoCountryID,
                 });
 
-// Add marker to marker array
+// Add marker to marker array to show google markers and to list array to show location list
 
                 self.markerArray.push(marker);
                 self.listArray.push(marker);
 
-// Event handler to set Content and show information window when marker is clicked
+// Event handler to set content and show information window when marker is clicked
 
                 google.maps.event.addListener(marker, 'click', function() {
                     var that = this;
@@ -268,65 +266,37 @@ var ViewModel = function () {
 
     console.log("out of init DOM function")
 
-// Function to filter list based on button clicked
+// Function to filter list based on activity button clicked
 
     self.filterActivity = function(activity) {
-        activityButton = true;
-        place = activity;
-        console.log("I'm in the Filter Function - Activity Passed = " + activity);
-        self.listArray().removeAll();
-        // for (var x = 0; x < 5; x++) {
-        //     skiArray[x] = self.markerArray()[x].title;
-        //     skiArray.prop = "title";
-        // };
-        // self.listArray = ko.observableArray();
-        for (var x = 0; x < 5; x++) {
-            console.log("pushing ", self.skiArray[x]);
-            self.listArray.push(self.markerArray()[x]);
-        };        
-        // self.listArray.subscribe(function) {
-        //     if (place = 'ski') {
-        //         return ko.utils.arrayFilter(self.markerArray(), function(marker) {
-        //             if (marker.type == place) {
-        //                 return marker.type.toLowerCase().indexOf(place) > -1;
-        //             };
-        //         });
-        //     };
-        // });
+        // activityButton = true;
+        console.log(activity);
+        self.listArray(self.markerArray().slice(0));
+        if (activity == "all") {
+            return;
+        }
+        var i = self.listArray().length;
+        console.log(i);
+        while (i--) {
+            if (self.listArray()[i].type !== activity){
+                    console.log(self.listArray()[i].title);
+                    self.listArray.splice(i, 1);    
+            };
+        };
     };
-
-    // if (activityButton) {
-        
-    //     self.activityArray = skiArray();
-    // };
 
 // Search/Filter function applied to list of points on map
 
-    self.listArray = ko.computed(function(){
-        // if (activityButton) {
-        //     console.log(activityButton, place);
-        //     if (place = 'ski') {
-        //         return ko.utils.arrayFilter(self.markerArray(), function(marker) {
-        //             if (marker.type == place) {
-        //                 return marker.type.toLowerCase().indexOf(place) > -1;
-        //             };
-        //         });
-        //     };
-        //     activityButton = false;
-        // };
-        var query = self.query().toLowerCase();
-        return ko.utils.arrayFilter(self.markerArray(), function(marker) {
-            // if (activityButton) {
-            //     return skiArray;
-            // };
-            return marker.title.toLowerCase().indexOf(query) > -1;
-        });
-    }, self);
+    // self.listArray = ko.computed(function(){
+    //     var query = self.query().toLowerCase();
+    //     return ko.utils.arrayFilter(self.markerArray(), function(marker) {
+    //         return marker.title.toLowerCase().indexOf(query) > -1;
+    //     });
+    // }, self);
 
-// Subscribe map marker array to list array to keep them in synch
+// Subscribe map marker array to list array to keep the markers in synch with the list
 
     self.listArray.subscribe(function() {
-        console.log(activityButton);
         for (var x = 0; x < self.listArray.length; x++) {
             console.log(self.listArray()[x]);
         }
@@ -339,16 +309,9 @@ var ViewModel = function () {
             marker.value.setMap(map);
           }
         });
-        // if (activityButton) {
-        //     console.log("In Subscription Branch for Ski")
-        //     var differences = ko.utils.compareArrays(self.skiArray(), self.listArray());
-        //     ko.utils.arrayForEach(differences, function(marker) {
-        //       self.listArray.destroy();
-        //     });
-        // };
     });
 
-//Highlight map marker if list item is clicked.
+//Highlight map marker if list item is clicked
 
     self.selectItem = function(listItem) {
         google.maps.event.trigger(listItem, 'click');
