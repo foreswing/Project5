@@ -180,6 +180,7 @@ var ViewModel = function () {
     var self = this;
     self.dialogItem = ko.observable();
     self.markerArray = ko.observableArray();
+    self.filterArray = ko.observableArray();
     self.listArray = ko.observableArray();
     self.query = ko.observable("");
     self.dialogVisible = ko.observable(false);
@@ -249,9 +250,6 @@ var ViewModel = function () {
 
                     infowindow.open(map, that);
                 });
-
-                console.log("Ending For Loop");
-
             }; // end for
 
 // Event handler to keep map centered when screen is resized
@@ -264,43 +262,46 @@ var ViewModel = function () {
 
     }(); // end initDom and immediately execute
 
-    console.log("out of init DOM function")
-
 // Function to filter list based on activity button clicked
 
     self.filterActivity = function(activity) {
-        // activityButton = true;
-        console.log(activity);
+
+// Start by setting displayed list array to full list of places by setting it equal marker array
+// Then use spice to remove entries that don't match the selected activity button
+// Must decrement through array backwards since index will change if go forward and remove elements
+
         self.listArray(self.markerArray().slice(0));
         if (activity == "all") {
             return;
         }
         var i = self.listArray().length;
-        console.log(i);
         while (i--) {
             if (self.listArray()[i].type !== activity){
-                    console.log(self.listArray()[i].title);
-                    self.listArray.splice(i, 1);    
+                self.listArray.splice(i, 1);    
             };
         };
     };
 
-// Search/Filter function applied to list of points on map
+// This function modifies the displayed locations based on the search/filter input box
+// A key point is that I had to use a different array than the displayed array since we are
+// using a ko.computed fuction, which makes the underlying observable "read only"
+// We must empty the displayed array first using the splice(0)
+// We then then push the filtered marker entry to the displayed array
 
-    // self.listArray = ko.computed(function(){
-    //     var query = self.query().toLowerCase();
-    //     return ko.utils.arrayFilter(self.markerArray(), function(marker) {
-    //         return marker.title.toLowerCase().indexOf(query) > -1;
-    //     });
-    // }, self);
+    self.filterArray = ko.computed(function(){
+        var query = self.query().toLowerCase();
+        self.listArray.splice(0);
+        return ko.utils.arrayFilter(self.markerArray(), function(marker) {
+            if (marker.title.toLowerCase().indexOf(query) > -1) {
+                self.listArray.push(marker);
+                return marker.title.toLowerCase().indexOf(query) > -1;
+            };
+        });
+    }, self);
 
 // Subscribe map marker array to list array to keep the markers in synch with the list
 
     self.listArray.subscribe(function() {
-        for (var x = 0; x < self.listArray.length; x++) {
-            console.log(self.listArray()[x]);
-        }
-
         var differences = ko.utils.compareArrays(self.markerArray(), self.listArray());
         ko.utils.arrayForEach(differences, function(marker) {
           if (marker.status == 'deleted') {
