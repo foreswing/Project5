@@ -181,6 +181,7 @@ var ViewModel = function () {
     self.dialogItem = ko.observable();
     self.markerArray = ko.observableArray();
     self.filterArray = ko.observableArray();
+    self.mapUnavailable = ko.observable(false);
     self.listArray = ko.observableArray();
     self.query = ko.observable("");
     self.dialogVisible = ko.observable(false);
@@ -258,6 +259,12 @@ var ViewModel = function () {
                 map.setCenter(new google.maps.LatLng(39.599434,-106.005254));
             });
 
+        } else {
+
+// Display Error Div if Google Map for Area is Not Available
+
+            self.mapUnavailable(true);
+
         }; // end if
 
     }(); // end initDom and immediately execute
@@ -267,7 +274,7 @@ var ViewModel = function () {
     self.filterActivity = function(activity) {
 
 // Start by setting displayed list array to full list of places by setting it equal marker array
-// Then use spice to remove entries that don't match the selected activity button
+// Then use splice to remove entries that don't match the selected activity button
 // Must decrement through array backwards since index will change if go forward and remove elements
 
         self.listArray(self.markerArray().slice(0));
@@ -322,6 +329,40 @@ var ViewModel = function () {
 
     self.snowReport = function(resortID) {
         console.log("I'm in the snow report function - Resort ID = " + resortID);
+
+        var snowReportUrl = "http://feeds.snocountry.net/conditions.php?" + 
+                            "apiKey=SnoCountry.example&ids=" + resortID;
+
+        $.ajax({
+            url: snowReportUrl,
+            dataType: 'JSONP',
+            jsonpCallback: 'callback',
+            type: 'GET',
+            success: function (data) {
+                console.log(data);
+            },
+            error: function(jqxhr, textStatus, error) {
+                alert("Unable to get Snow Report from SnoCountry at this time.");
+                console.log(this.url);
+            }
+        });
+
+
+        // $.getJSON(snowReportUrl)
+        //     .done(function(data) {
+        //         console.log(data);
+        //         self.dialogItem = data;
+        //       // self.lightboxUrl(self.currentPhotos()[0]);
+        //       // self.lightboxVisible(true);
+        //     })
+        //     .fail(function(jqxhr, textStatus, error) {
+        //         alert("Unable to get Snow Report from SnoCountry at this time.");
+        //     });
+
+        $("button").click(function() {
+            $(this).parent().hide();
+        });
+
         document.getElementById("dialog").style.visibility = "visible";
         self.dialogVisible(true);
         // self.dialogItem = ko.observable();
