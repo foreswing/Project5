@@ -4,7 +4,7 @@
 
 2. Click buttons to narrow search to only ski resorts, taverns or dispensaries in the area.
 
-3.Click the button containing an image for each of the three location categories to display all locations.
+3. Click the button containing an image for each of the three location categories to display all locations.
 
 4. Enter search term to narrow list of locations by title.
 
