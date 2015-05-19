@@ -1,4 +1,5 @@
  This is my map project titled Rocky Mountain High.
+ 
 
 1. Start by loading index.HTML.
 
