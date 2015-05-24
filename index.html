@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">        
     <title>Summit High Country</title>
     <script asynch src="http://maps.googleapis.com/maps/api/js"></script>
@@ -34,7 +35,8 @@
 
     <div style="width: 100%; min-height: 100%; position: absolute">
 
-        <div id="map" style= "position: absolute; float: left; width: 70%; height: 100%"></div>
+        <div id="map" style= "position: absolute; float: left; width: 70%; height: 100%">
+        </div>
 
         <div style= "float: right; width: 30%; height: 100%">
             <ul style="list-style-type: none; padding-left:15px; margin:0px" data-bind= "foreach: listArray">
@@ -43,44 +45,20 @@
             </ul>
         </div>
 
-        <div id="dialog" Title="Snow Report from SnoCountry" style="position: absolute; width: 50%; height: 50%; z-index: 10;  background-color: cyan; margin-left: 10%; margin-top: 10%; visibility: hidden">
+    </div>
 
-            <button style="float: right">X</button>
-            <p data-bind="text: dialogItem"></p>
-
-<!--    <div id="dialog" data-bind="text: dialogItem">
-            <div class="dialog-content">
-                <div class="header">
-                    <h2>Modal Heading</h2>
-                </div>
-                <div class="copy">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                </div>
-                <div class="cf footer">
-                    <a href="#" class="btn">Close</a>
-                </div>
-            </div>
-
-            <div class="overlay"></div>
-            </div>
-                <div id="snow report">
-                <p id="test"></p> 
-            </div>
-        </div>-->
-        </div>
-
-        <div id="map-unavailable" style="width: 100%; min-height: 100%; position: absolute z-index: 20">
-            <br><br>
-            <h1 style="text-align: center; color: blue">Unable to Load Google Map for this Application</h1>
-            <h1 style="text-align: center; color: blue">Please Verify Selection and Try Again</h1>
+    <div id="map-unavailable" style="width: 100%; min-height: 100%; position: absolute z-index: 20; visibility: hidden">
+        <br><br>
+        <h1 style="text-align: center; color: blue">Unable to Load Google Map for this Application</h1>
+        <h1 style="text-align: center; color: blue">Please Verify Selection and Try Again</h1>
         </div>
 
     </div>
 
     <script synch src='js/jquery-2.1.3.min.js'></script>
     <script asynch src='js/knockout-3.3.0.js'></script>
+    <script asynch src='js/bootstrap.min.js'></script>
+    <script asynch src='js/bootbox.min.js'></script>
     <script aynch src='js/ViewModel.js'></script> 
 
 </body>
