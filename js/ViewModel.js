@@ -232,8 +232,9 @@ var ViewModel = function () {
 // Create an array containing points of interest using data Model for display on map
 
             var pointsArray = Model.points;
+            var pointsArrayLength = pointsArray.length
 
-            for (var x=0; x < pointsArray.length; x++) {
+            for (var x=0; x < pointsArrayLength; x++) {
                 var pointPosition = new google.maps.LatLng(
                 pointsArray[x].lat,
                 pointsArray[x].long
@@ -270,7 +271,7 @@ var ViewModel = function () {
 
                     infowindow.open(map, that);
                 }); // end event listener
-            }; // end for loop
+            } // end for loop
 
 // Event handler to keep map centered when screen is resized
 
@@ -285,7 +286,7 @@ var ViewModel = function () {
             $("#map-unavailable").css('visibility', 'visible');
             self.mapUnavailable(true);
 
-        }; // end if
+        } // end if
 
     }(); // end initDom and immediately execute
 
@@ -306,8 +307,8 @@ var ViewModel = function () {
         while (i--) {
             if (self.listArray()[i].type !== activity){
                 self.listArray.splice(i, 1);    
-            };
-        };
+            }
+        }
     };
 
 // This function modifies the displayed locations based on the search/filter input box
@@ -323,7 +324,7 @@ var ViewModel = function () {
             if (marker.title.toLowerCase().indexOf(query) > -1) {
                 self.listArray.push(marker);
                 return marker.title.toLowerCase().indexOf(query) > -1;
-            };
+            }
         });
     }, self);
 
@@ -394,7 +395,7 @@ var ViewModel = function () {
 
     };
 
-} // End ViewModel Function
+}; // End ViewModel Function
 
 // Apply all ViewModel knockout bindings
 

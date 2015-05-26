@@ -1,13 +1,51 @@
+h1 {
+	text-align: center;
+	color: blue;
+}
+
+#container {
+	width: 100%;
+	min-height: 100%;
+	position: absolute;
+}
+
+#map {
+	position: absolute;
+	float: left;
+	width: 70%;
+	height: 100%;
+}
+
+#list {
+	float: right;
+	width: 30%;
+	height: 100%;
+}
+
+ul {
+	list-style-type: none;
+	padding-left: 15px;
+	margin: 0px;
+}
+
 li {background: white}
-li:nth-child(odd) {background:  #D1D1E0}
+li:nth-child(odd) {background:  #d1d1e0}
 
 ul li {
 	cursor: pointer;
 }
 
+#map-unavailable {
+	width: 100%;
+	min-height: 100%;
+	position: absolute;
+	z-index: 20;
+	visibility: hidden;
+}
+
 .selected, ul li:hover {
 	color: #000;
-	background-color: #FFFF00;
+	background-color: #ffff00;
 }
 
 .dialog-wrapper {

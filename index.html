@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">        
     <title>Summit High Country</title>
     <script asynch src="http://maps.googleapis.com/maps/api/js"></script>
@@ -13,7 +13,7 @@
 <body>
 
     <header> 
-        <h1 style="color:blue; text-align: center">Rocky Mountain High</h1>
+        <h1>Rocky Mountain High</h1>
         <div>
             <span>
                 <input class="search" type="search" placeholder="Search/Filter..." data-bind="value: query, valueUpdate: 'afterkeydown'">
@@ -33,13 +33,12 @@
        </div>
     </header>
 
-    <div style="width: 100%; min-height: 100%; position: absolute">
+    <div id="container">
 
-        <div id="map" style= "position: absolute; float: left; width: 70%; height: 100%">
-        </div>
+        <div id="map"></div>
 
-        <div style= "float: right; width: 30%; height: 100%">
-            <ul style="list-style-type: none; padding-left:15px; margin:0px" data-bind= "foreach: listArray">
+        <div id="list">
+            <ul data-bind= "foreach: listArray">
                 <li data-bind="text: title, click: selectItem, css: {'selected': highlight()}">
                 </li>
             </ul>
@@ -47,10 +46,10 @@
 
     </div>
 
-    <div id="map-unavailable" style="width: 100%; min-height: 100%; position: absolute z-index: 20; visibility: hidden">
+    <div id="map-unavailable">
         <br><br>
-        <h1 style="text-align: center; color: blue">Unable to Load Google Map for this Application</h1>
-        <h1 style="text-align: center; color: blue">Please Verify Selection and Try Again</h1>
+        <h1>Unable to Load Google Map for this Application</h1>
+        <h1>Please Verify Selection and Try Again</h1>
         </div>
 
     </div>
