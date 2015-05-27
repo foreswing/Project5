@@ -29,6 +29,7 @@ ul {
 }
 
 li {background: white}
+
 li:nth-child(odd) {background:  #d1d1e0}
 
 ul li {
@@ -45,7 +46,7 @@ ul li {
 
 .selected, ul li:hover {
 	color: #000;
-	background-color: #ffff00;
+	background-color: #ff0;
 }
 
 .dialog-wrapper {

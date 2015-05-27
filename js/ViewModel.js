@@ -232,7 +232,7 @@ var ViewModel = function () {
 // Create an array containing points of interest using data Model for display on map
 
             var pointsArray = Model.points;
-            var pointsArrayLength = pointsArray.length
+            var pointsArrayLength = pointsArray.length;
 
             for (var x=0; x < pointsArrayLength; x++) {
                 var pointPosition = new google.maps.LatLng(
